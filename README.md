@@ -4,13 +4,13 @@ Para realizar los ejercicios de este tema deberás haber realizado los ejercicio
 
 ## 📝 Enunciados
 
-> 💡 El ejercicio deberás realizarlo en el fichero correspondiente, que estará ubicado en la carpeta del bloque de ejercicios de repaso y con la nomenclatura **T3-T4.js**. El ejercicio se presentará en un fichero js, que incluirá un comentario con el enunciado del ejercicio. 
+> 💡 El ejercicio deberás realizarlo en el fichero correspondiente, que estará ubicado en la carpeta del bloque de ejercicios de repaso y con la nomenclatura **T3-T4.js**. El ejercicio se presentará en un fichero js, que incluirá un comentario con el enunciado del ejercicio.
 
 El EJERCICIO DE REPASO es el siguiente:
 
-| UNIDAD | Ejercicios |
-| -------- | ---------- |
-| 1. EJERCICIO TEMA 3 y TEMA 4                          | [T3-T4](T3-T4/T3-T4.js) |
+| UNIDAD                       | Ejercicios              |
+| ---------------------------- | ----------------------- |
+| 1. EJERCICIO TEMA 3 y TEMA 4 | [T3-T4](T3-T4/T3-T4.js) |
 
 Además, el ejercicio irá acompañado de uno o varios tests para comprobar que tu solución es correcta. En la sección [Cómo ejecutar los tests](#cómo-ejecutar-los-tests) describimos cómo puedes ejecutar los tests.
 
@@ -22,7 +22,7 @@ Una vez termines el ejercicio, deberás enviar tus cambios para que se registren
 
 Para lanzar los tests deberás ejecutar esta instrucción en el Terminal de tu editor (el Terminal está localizado en la parte inferior de la pantalla)
 
-```
+```shell
 npm t
 ```
 
@@ -32,18 +32,18 @@ Como puedes esperar, la primera vez que ejecutes `npm t` y se lancen los tests, 
 
 Este es un ejemplo de una posible salida de error:
 
-```
+```text
  FAIL  src/T1-T2.test.js
   pec
     checkAge:
       × should return true when age is bigger or equal than 18
 ```
 
-Es importante fijarse en la descripción del error, por ejemplo, el texto de error anterior indica que para el ejercicio (relativo a la funcinón `checkAge`) la función debe devolver `true` si `age` es mayor o igial que 18. Esta indicación os ayuda a revisar el código para comprobar porqué el comportamiento no es el esperado.
+Es importante fijarse en la descripción del error, por ejemplo, el texto de error anterior indica que para el ejercicio (relativo a la función `checkAge`) la función debe devolver `true` si `age` es mayor o igual que 18. Esta indicación os ayuda a revisar el código para comprobar porqué el comportamiento no es el esperado.
 
 Una vez corregido el problema, en cuanto se guarda el fichero donde estamos editando los ejercicios, el test se vuelve a lanzar y nos mostraría:
 
-```
+```text
  PASS  src/tema0.js
   pec
     checkAge:
@@ -62,16 +62,16 @@ Para entregar el ejercicio, sigue estos pasos. Ten en cuenta que estos pasos est
 
 2. Haz click en el icono de la extensión Git en la barra de menú izquierda, este es el icono:
 
-    ![Git](imgs/git.png)
+   ![Git](imgs/git.png)
 
 3. Haz click en el símbolo + para añadir el fichero que quieras enviar:
 
 4. Escribe un mensaje resumiendo tus cambios (por ejemplo, "Submitting exercise") y luego haz click en _Commit_
 
-    ![Commit](imgs/commit.png)
+   ![Commit](imgs/commit.png)
 
-5. Haz click en _Sync Changes_ 
+5. Haz click en _Sync Changes_
 
-    ![SyncChanges](imgs/sync.png)
+   ![SyncChanges](imgs/sync.png)
 
-Tu ejercicio ya está entregado, el profesor podrá revisarlo si es necesario. 
+Tu ejercicio ya está entregado, el profesor podrá revisarlo si es necesario.

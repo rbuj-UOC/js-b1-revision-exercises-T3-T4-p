@@ -1,13 +1,13 @@
 jest.setTimeout(20000);
-const fs = require('fs'); 
-import { fetchSWAPIPeople } from '../T3-T4/T3-T4'; 
-import { modifyPageNumberInput } from '../T3-T4/T3-T4';  
-import { modifySendFormButton } from '../T3-T4/T3-T4'; 
+const fs = require('fs');
+import { fetchSWAPIPeople } from '../T3-T4/T3-T4';
+import { modifyPageNumberInput } from '../T3-T4/T3-T4';
+import { modifySendFormButton } from '../T3-T4/T3-T4';
 
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/dom';
 
-//jest.mock('node-fetch'); 
+//jest.mock('node-fetch');
 global.open = jest.fn();
 let triggered = false;
 
@@ -139,8 +139,8 @@ describe('Test for T3-T4', () => {
 </body>
 </html>
 `;
-  await modifyPageNumberInput();
-  await modifySendFormButton()
+    await modifyPageNumberInput();
+    await modifySendFormButton();
   });
   test('Modifying input value and change event', async () => {
     const pageNumberInput = screen.getByTestId('pageNumber');
@@ -156,38 +156,49 @@ describe('Test for T3-T4', () => {
       expect(loader).not.toHaveClass('hidden');
       expect(myContentForm).toHaveClass('hidden');
     });
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       setTimeout(() => {
         expect(loader).toHaveClass('hidden');
         triggered = true;
-        resolve(); 
-      }, 6000);}
-    );
+        resolve();
+      }, 6000);
+    });
   });
-  test('Loader should has loading... at textContext after load',  () => {
+  test('Loader should has loading... at textContext after load', () => {
     expect(triggered).not.toBeFalsy();
     expect(screen.getByTestId('loading-text')).toHaveTextContent('loading...');
   });
-  test('Loader should be hidden after load',  () => {
+  test('Loader should be hidden after load', () => {
     expect(triggered).not.toBeFalsy();
     expect(loader).toHaveClass('hidden');
   });
-  test('myContent should be visible after load',  () => {
+  test('myContent should be visible after load', () => {
     expect(triggered).not.toBeFalsy();
     expect(screen.getByTestId('myContent')).not.toHaveClass('hidden');
   });
-  test('selectContainer should contain a select element', () => {    
-    expect(screen.getByTestId('selectContainer').querySelector('select')).toBeInTheDocument();
+  test('selectContainer should contain a select element', () => {
+    expect(
+      screen.getByTestId('selectContainer').querySelector('select')
+    ).toBeInTheDocument();
   });
   test('Form action is not correctly changed', () => {
-    screen.getByTestId('selectContainer').querySelector('select').selectedIndex = 4;
-    screen.getByTestId('selectContainer').querySelector('select').dispatchEvent(new Event('change'));
+    screen
+      .getByTestId('selectContainer')
+      .querySelector('select').selectedIndex = 4;
+    screen
+      .getByTestId('selectContainer')
+      .querySelector('select')
+      .dispatchEvent(new Event('change'));
 
-    expect(screen.getByTestId('selectContainer').querySelector('select').value).not.toBeNull();
+    expect(
+      screen.getByTestId('selectContainer').querySelector('select').value
+    ).not.toBeNull();
     expect(screen.getByTestId('myContent').action).not.toBeNull();
-    expect(screen.getByTestId('selectContainer').querySelector('select').value).toEqual(screen.getByTestId('myContent').action);
+    expect(
+      screen.getByTestId('selectContainer').querySelector('select').value
+    ).toEqual(screen.getByTestId('myContent').action);
   });
-  test('Default action should be prevented for sendForm button',   () => {
+  test('Default action should be prevented for sendForm button', () => {
     const sendFormButton = screen.getByTestId('sendForm');
     const clickEvent = new Event('click', { bubbles: true, cancelable: true });
     sendFormButton.dispatchEvent(clickEvent);

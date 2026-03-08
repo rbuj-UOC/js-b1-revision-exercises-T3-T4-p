@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Revision T3-T4</title>
@@ -7,7 +8,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
 
   <style>
-    li { margin-top: 0.5em; }
+    li {
+      margin-top: 0.5em;
+    }
+
     body {
       margin: 0;
       overflow: hidden;
@@ -56,9 +60,13 @@
     }
 
     @keyframes wave {
-      0%, 40%, 100% {
+
+      0%,
+      40%,
+      100% {
         transform: scaleY(0.4);
       }
+
       20% {
         transform: scaleY(1);
       }
@@ -105,16 +113,19 @@
       background-color: #003366;
       transform: translateY(-2px);
     }
-	#selectContainer {
+
+    #selectContainer {
       width: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 10px;
-      background-color: #ddd; /* Color de fondo de ejemplo */
+      background-color: #ddd;
+      /* Color de fondo de ejemplo */
     }
   </style>
 </head>
+
 <body>
   <div id="loader" class="hidden" data-testid="loader">
     <div class="bar-container">
@@ -129,14 +140,14 @@
       <label for="pageNumber">Page number of people:</label>
       <input id="pageNumber" type="number" />
     </div>
-	<div id="selectContainer" data-testid="selectContainer"></div>>
+    <div id="selectContainer" data-testid="selectContainer">
       Place your SELECT here
     </div>
     <div class="divForm">
-      <button id="sendForm" type="submit"  data-testid="sendForm">SEND FORM!</button>
+      <button id="sendForm" type="submit" data-testid="sendForm">SEND FORM!</button>
     </div>
   </form>
-<script src="./T3-T4.js"></script>
+  <script src="./T3-T4.js"></script>
 </body>
-</html>
 
+</html>
